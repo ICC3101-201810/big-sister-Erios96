@@ -11,12 +11,14 @@ namespace LabPOO
     {
         public static List<Product> cart;
         public static List<Product> market;
+        HermanaReta += new Hermana(object.sacarCosa);
 
         static void Main(string[] args)
         {
             cart = new List<Product>();
             market = new List<Product>();
             SupplyStore();
+            HermanaReta += new Hermana(object.sacarCosa);
             while (true)
             {
                 PrintHeader();
@@ -191,5 +193,228 @@ namespace LabPOO
                 response = Console.ReadKey(true);
             }
         }
+        public delegate void Hermana(object sender, int num);
+        public void sacarCosa(object sender, int num)
+        {
+            Product product = market[num];
+            if (product.Name == "Láminas de Lasaña")
+            {
+                int i = 0;
+                foreach(Product p in cart)
+                {
+                    if(p.Name == "Láminas de Lasaña")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 12)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Queso Parmesano")
+            {
+                int i = 0;
+                foreach(Product p in cart)
+                {
+                    if(p.Name == "Queso Parmesano")
+                    {
+                        i++;
+                    }
+                }
+                if(i>1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Mantequilla")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Mantequilla")
+                    {
+                        i++;
+                    }
+                }
+                if (i>2)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Carne Molida")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Carne Molida")
+                    {
+                        i++;
+                    }
+                }
+                if (i>1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+                
+            }
+            if (product.Name == "Vino Blanco Caja"| product.Name == "Vino Sauvignon Blanc Reserva Botella")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Vino Blanco Caja" | product.Name == "Vino Sauvignon Blanc Reserva Botella")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+
+            }
+            if (product.Name == "Tomates Pelados en lata")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Tomates Pelados en lata")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Bolsa de Zanahorias")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Bolsa de Zanahorias")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Malla de Cebollas")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Malla de Cebollas")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Aceite de Oliva")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Aceite de Oliva")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Sal Lobos")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Sal Lobos")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 2)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Pimienta")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Pimienta")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 2)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Harina")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Harina")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            if (product.Name == "Leche Entera")
+            {
+                int i = 0;
+                foreach (Product p in cart)
+                {
+                    if (p.Name == "Leche Entera")
+                    {
+                        i++;
+                    }
+                }
+                if (i > 1)
+                {
+                    cart.Remove(product);
+                    Console.WriteLine("Matias malo");
+                }
+            }
+            else
+            {
+                cart.Remove(product);
+                Console.WriteLine("Matias malo");
+            }
+        }
+        public event Hermana HermanaReta;
+
+        
     }
 }
